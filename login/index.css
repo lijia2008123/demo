@@ -16,6 +16,7 @@ header{
 header p{
 	position: absolute;
 	top: 102px;
+	left: 410px;
 }
 .main{
 	height: 700px;
