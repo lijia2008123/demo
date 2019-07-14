@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="input" name="dname">
+	<script>
+		var input=document.getElementById('input')
+		input.onblur=function(){
+			var xmlHttp = new XMLHttpRequest()
+		 	xmlHttp.onreadystatechange = function(){
+		 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+		 			var data = xmlHttp.responseText;
+		 			alert('得到的数据是' + data);
+		 		}
+			}
+			var param = document.getElementById('input').value
+			xmlHttp.open("get","myweb.json?dname" + param,true)
+			xmlHttp.send()
+		}
+	</script>
+</body>
+</html>
